@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
 
-class Project extends Model {}
-
-Project.init(
+class Watch extends Model {}
+Watch.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,9 +23,9 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
+    price: {
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -34,14 +34,15 @@ Project.init(
         key: 'id',
       },
     },
+   
   },
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+   
     underscored: true,
-    modelName: 'project',
+    modelName: 'watch',
   }
 );
 
-module.exports = Project;
+module.exports = Watch;
