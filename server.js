@@ -1,41 +1,58 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+// dependencies
+var express = require('express');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var exphbs = require('express-handlebars');
+var path = require('path');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 const helpers = require('./utils/helpers');
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+// import passport configuration
+//var passport = require('./config/passport.js');
 
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
+// set up port 
+var PORT = process.env.PORT || 8080;
 
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+//require models for syncing
+var db = require('./models');
+// set up express to handle data parsing and HTTP requests
+var app = express();
+// const hbs = exphbs.create({ helpers });
 
-app.use(session(sess));
+app.use('/public', express.static(path.join(__dirname, './public')));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
-// Inform Express.js on which template engine to use
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// set up express to use passport
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true}));
+//app.use(passport.initialize());
+//app.use(passport.session());
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+// set up app to use express handlebars
+app.set('views', path.join(__dirname, './views'));
 
-app.use(routes);
+app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+// import routes for controllers
+require('./controllers/authController.js')(app);
+//require('./controllers/indexController.js')(app);
+//require('./controllers/usersController.js')(app);
+require('./controllers/productsController.js')(app);
+//require('./controllers/categoriesController.js')(app);
+//require('./controllers/cartController.js')(app);
+//require('./controllers/ordersController.js')(app);
+//require('./controllers/temp.js')(app); //REMOVE for creating seed data
+ 
+// start server
+db.sequelize.sync({ force: true }).then(function() {
+	app.listen(PORT, function() {
+    console.log('App listening on port ' + PORT);
+	});
 });
+
