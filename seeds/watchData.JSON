@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Timex Men's watch",
+        "description": "Men's Watch",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.YMPh0xigPC0BUogmYoUg4gHaHa&pid=Api&P=0&w=167&h=167",
+        "price": 89.99
+    },
+    {
+        "name": "Swiss watch",
+        "description": "Popular watch",
+        "image": "https://i5.walmartimages.com/asr/92a80c94-9e20-4232-b949-4a10e2251ebc_1.64f6aaa740477d931c9be88a597069bd.jpeg",
+        "price": 79.99
+    },
+    {
+        "name": "Citizen Men's Watch 1",
+        "description": "This is an example description",
+        "image": "https://tse1.mm.bing.net/th?id=OIP.OJPbTQ_Cd3jnKAiOwIZc1wHaHa&pid=Api&P=0&w=173&h=173",
+        "price": 69.99
+    },
+    {
+        "name": "Citizen Men's Watch 1",
+        "description": "This is an example description",
+        "image": "http://www.swissclassicwatches.com/wp-content/uploads/2016/07/Ball-Watch-Engineer-II-Green-Berets.jpg",
+        "price": 119.99
+    }
+]

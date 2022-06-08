@@ -11,6 +11,10 @@ Watch.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,13 +30,6 @@ Watch.init(
     price: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
     },
    
   },
