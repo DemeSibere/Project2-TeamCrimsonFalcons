@@ -1,26 +1,38 @@
 [
     {
-        "name": "Timex Men's watch",
+        "name": "S3 Standard Issue Field - 36mm Quartz",
         "description": "Men's Watch",
-        "image": "https://tse1.mm.bing.net/th?id=OIP.YMPh0xigPC0BUogmYoUg4gHaHa&pid=Api&P=0&w=167&h=167",
-        "price": 89.99
+        "image": "https://cdn.shopify.com/s/files/1/1165/0300/products/S3-FB-QR-SL-BLK_21d7f384-ccc3-4182-92e2-214e92a9f9f0_650x.jpg?v=1600146171",
+        "price": 160
     },
     {
-        "name": "Swiss watch",
+        "name": "ViewPoint VP Series 3 Watch",
         "description": "Popular watch",
         "image": "https://i5.walmartimages.com/asr/92a80c94-9e20-4232-b949-4a10e2251ebc_1.64f6aaa740477d931c9be88a597069bd.jpeg",
-        "price": 79.99
+        "price": 140
     },
     {
-        "name": "Citizen Men's Watch 1",
+        "name": "Frosted Star Dust",
         "description": "This is an example description",
-        "image": "https://tse1.mm.bing.net/th?id=OIP.OJPbTQ_Cd3jnKAiOwIZc1wHaHa&pid=Api&P=0&w=173&h=173",
-        "price": 69.99
+        "image": "https://cdn.shopify.com/s/files/1/1273/4183/products/bigFront-min_0e09a7b5-7a60-4b0b-93b8-cb5590ce5200_768x922@2x.png?v=1643810422",
+        "price": 375
     },
     {
         "name": "Citizen Men's Watch 1",
         "description": "This is an example description",
         "image": "http://www.swissclassicwatches.com/wp-content/uploads/2016/07/Ball-Watch-Engineer-II-Green-Berets.jpg",
-        "price": 119.99
+        "price": 120
+    },
+    {
+        "name":"Bretling Men's Watch ",
+        "description":"This is an example description",
+        "image":"https://www.jckonline.com/wp-content/uploads/2017/10/breitling-chronomat-watch.jpg",
+        "price":140
+    },
+    {
+        "name":"Diamond Mens Rolex Datejust Watch 16200 | 36Mm | Diamond Red Mother Of Pearl Roman Numeral Dial | Jubilee Band",
+        "description":"Something flashy for the Night out with boys",
+        "image":"https://cdn.shopify.com/s/files/1/1117/3536/products/Rolex_motherofpearl_red_1_720x.jpg?v=1559879103",
+        "price":4000
     }
 ]
