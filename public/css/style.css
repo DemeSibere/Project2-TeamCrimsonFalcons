@@ -30,9 +30,10 @@ img{
 
 #navbar-brand{
   color: rgb(red, green, blue);
+  
 }
 
-.navbar-brand{
-  color: rgb(red, green, blue);
+a.navbar-brand {
+  color:rgba(36, 110, 179, 0.843)!important;
 }
 
