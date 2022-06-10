@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+//const Cart = require('../models/cart');
+
 
 router.post('/', async (req, res) => {
   try {
@@ -15,6 +17,15 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
+/*router.get('/cart', async (req, res) => {
+  const addedProduct = Product.findById(req.body.id)[0];
+  req.session.save(addedProduct);
+  res.render('cart');
+
+});
+*/
 
 router.post('/login', async (req, res) => {
   try {
