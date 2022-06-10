@@ -34,6 +34,13 @@ img{
 }
 
 a.navbar-brand {
-  color:rgba(36, 110, 179, 0.843)!important;
+  color:navy !important;
+}
+ 
+a{
+  color: navy !important;
 }
 
+*{
+  scroll-behavior: smooth !important;
+}
