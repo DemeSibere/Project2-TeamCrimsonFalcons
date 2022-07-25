@@ -21,6 +21,20 @@ console.log('t');
     }
   }
 };
+/*
+const cartEventListener = async (event) => {
+  event.preventDefault();
+console.log('t=====================================');  
+
+    if (response.ok) {
+      // If successful, redirect the browser to the  page
+      document.location.replace('/cart');
+    } else {
+      alert(response.statusText);
+    }
+  
+};
+*/
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -33,7 +47,6 @@ const signupFormHandler = async (event) => {
   const name = `${firstName} ${lastName}`;
 
   if (firstName  && lastName && email && password) {
-    console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
     const response = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
@@ -41,8 +54,6 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      console.log("")
-      console.log("login==================")
 
       document.location.replace('/login');
     } else {
@@ -53,6 +64,8 @@ const signupFormHandler = async (event) => {
 
 document
   .querySelector('.login-form')?.addEventListener('submit', loginFormHandler);
+  document
+  .querySelector('.noPad')?.cartEventListener('submit', loginFormHandler);
 
 document
   .querySelector('.signup-form')?.addEventListener('submit', signupFormHandler);

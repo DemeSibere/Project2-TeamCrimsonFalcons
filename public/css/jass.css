@@ -19,7 +19,7 @@ html {
  */
 body {
   margin: 0;
-  background-image:('./im');
+  background-image:('./image/th.jpg');
 }
 
 /**
@@ -947,6 +947,9 @@ a:hover {
 
 .bg-link {
   background-color: #1b89bc !important;
+}
+.col-md-6 {
+  background-image: ('./image/th.jpg');
 }
 
 /* DISPLAY */
